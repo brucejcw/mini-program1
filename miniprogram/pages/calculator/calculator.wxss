@@ -1,0 +1,5 @@
+/* miniprogram/pages/calculator.wxss */
+
+.weui-input {
+  font-size: 14px;
+}

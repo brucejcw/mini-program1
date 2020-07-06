@@ -1,0 +1,10 @@
+<!--miniprogram/pages/calculator.wxml-->
+<view>
+<view>输入年利息(%): <input class="weui-input" maxlength="10" value="3"  bindinput="onInputInterestRate" /></view>
+<view>输入总金额: <input class="weui-input" maxlength="10" value="10000" bindinput="onInputAmount" /></view>
+<view>年数: <input class="weui-input" maxlength="10" value="4" bindinput="onInputYear" /></view>
+<view><button bindtap="calculate">计算</button></view>
+<view>总利息: {{totalInterest}}</view>
+<view>期望利息: {{expectedInterest}}</view>
+<view>实际利率: {{realInterestRate}}</view>
+</view>
