@@ -86,16 +86,35 @@ Page({
   },
 
   calculate: function (e) {
-    wx.cloud.callFunction({
-      name: 'calcInterest',
-      data: this.data,
-      success: res => {
-        console.log('[云函数] [calcInterest]: ', res.result)
-        this.setData(res.result)
-      },
-      fail: err => {
-        console.error('[云函数] [calcInterest] 调用失败', err)
+    const getRealInterestRate = function (t) {
+      return t / (amount * (year - (year - 1) / 2)) * 100
+    }
+
+    const getExpectedInterestList = function () {
+      const interestList = []
+    
+      for (let i = year; i > 0; i--) {
+        interestList.push({
+          formula: `${amount} * ${i/4}(每年) * ${interestRate} / 100`,
+          value: amount * i/4 * interestRate/100,
+          year: year - i + 1,
+        })
       }
+      return interestList
+    }
+
+    const {
+      interestRate,
+      amount,
+      year,
+    } = this.data
+    const totalInterest = interestRate / 100 * amount * year
+    const realInterestRate = getRealInterestRate(totalInterest)
+    const expectedInterestList = getExpectedInterestList()
+    this.setData({
+      totalInterest,
+      realInterestRate,
+      expectedInterestList,
     })
   }
 })

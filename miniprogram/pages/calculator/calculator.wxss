@@ -1,5 +1,65 @@
 /* miniprogram/pages/calculator.wxss */
 
+.container {
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+.container > view {
+  width: 100%;
+}
+
+view.row {
+  margin-bottom: 16px;
+}
+
 .weui-input {
   font-size: 14px;
 }
+
+.table {
+  border: 0px solid darkgray;
+ }
+ .tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 36px;
+  align-items: center;
+ }
+ .td {
+  width:40%;
+  justify-content: center;
+  text-align: center;
+ }
+ .td.formula {
+   font-size: 10px;
+ }
+ .bg-w{
+  background: #eee;
+ }
+ .bg-g{
+  background: #E6F3F9;
+ }
+ .th {
+  width: 40%;
+  justify-content: center;
+  color: #333;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+ }
+
+ .btn-calc {
+   display: block;
+   margin: 0 !important;
+   width: 100% !important;
+   padding: 8px 20px;
+   background: dodgerblue;
+   color: #fff;
+   box-shadow: 0 2px 2px #ccc;
+ }
+
+ .result-area {
+   margin-top: 30px;
+ }

@@ -1,25 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-
-  <!-- 用户 openid -->
-  <!-- <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-      size="default"
-    ></button>
-    <view class="userinfo-nickname-wrapper">
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
-    </view>
-  </view> -->
-
-  <view class="uploader">
-    <view class="uploader-text" bindtap="openCalculator">计算器</view>
+  <view class="row">
+    <view class="block" bindtap="openCalculator">计算器</view>
+    <view class="block" bindtap="openSpider">数据</view>
   </view>
-  <text class="login_net" bindtap="toOut">此处</text>
-
 
   <!-- 上传图片 -->
   <!-- <view class="uploader">

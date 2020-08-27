@@ -123,6 +123,12 @@ Page({
     })
   },
 
+  openSpider: function () {
+    wx.navigateTo({
+      url: '../spider/index',
+    })
+  },
+
   toOut:()=>{
     wx.navigateTo({
        url: '../out/out',
